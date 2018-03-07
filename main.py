@@ -61,7 +61,11 @@ def dist_helper(x1, y1, x2, y2):
     :rtype: float
     """
     from math import sqrt
-    s = (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1)
+    try:
+        s = (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1)
+    except TypeError:
+        print("Wrong type passed in")
+        raise TypeError()
     return sqrt(s)
 
 if __name__ == "__main__":
